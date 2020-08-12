@@ -10,7 +10,7 @@
 /*---------- fonts -----------*/
 @font-face {
   font-family: vibes;
-  src: url("./fonts/great_vibes/GreatVibes-Regular.ttf");
+  src: url("./fonts/Great_Vibes/GreatVibes-Regular.ttf");
 }
 /*--------- global classes ---------*/
 .vibes {
@@ -170,7 +170,7 @@ nav {
   border: 1px solid white;
   display: inline-block;
   width: 90px;
-  heigh: 1px;
+  height: 1px;
   position: relative;
   opacity: 0;
   animation: lines 0.5s;
