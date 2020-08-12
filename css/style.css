@@ -1,0 +1,463 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --yellow: #d4ba2a;
+}
+/*---------- fonts -----------*/
+@font-face {
+  font-family: vibes;
+  src: url("./fonts/great_vibes/GreatVibes-Regular.ttf");
+}
+/*--------- global classes ---------*/
+.vibes {
+  font-family: vibes;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+.body {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+h3 {
+  font-family: vibes;
+  font-size: 5rem;
+  color: var(--yellow);
+  font-weight: 100;
+}
+h3 span {
+  font-family: vibes;
+  font-size: 6.2rem;
+}
+/*-------- header ----------*/
+header {
+  background: url("../images/hero.jpg") no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+/*-------- nav bar -----------*/
+nav {
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+}
+.logo img {
+  width: 100px;
+}
+.menu-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+}
+.menu-btn i {
+  color: #fff;
+  font-size: 2.5rem;
+}
+.menu {
+  height: 100vh;
+  position: absolute;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  width: 80%;
+  background: #333;
+
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: all 0.2s;
+}
+.menu ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-evenly;
+  padding: 3rem 0;
+}
+.menu ul li {
+  list-style: none;
+  width: 75%;
+  margin: auto;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  font-size: 1.3rem;
+}
+/*--------- brand -----------*/
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.brand .welcome {
+  overflow: hidden;
+  width: 110%;
+  height: 6rem;
+  transform: translate(-20px, -30px);
+}
+.brand h3 {
+  opacity: 0;
+  animation: welcome 0.4s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+@keyframes welcome {
+  0% {
+    opacity: 0;
+    transform: translateY(6rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+.brand h2 {
+  font-size: 2rem;
+  position: relative;
+  top: -25px;
+  letter-spacing: 3px;
+  animation: the-rosa 0.5s;
+}
+@keyframes the-rosa {
+  0% {
+    opacity: 0;
+    transform: scale(2.5, 2.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+.lines {
+  position: relative;
+  top: -29px;
+}
+.fa-asterisk {
+  position: relative;
+  top: 5px;
+  color: var(--yellow);
+  font-size: 0.8rem;
+  opacity: 0;
+  animation: asterisk 0.2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes asterisk {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.left-line,
+.right-line {
+  border: 1px solid white;
+  display: inline-block;
+  width: 90px;
+  heigh: 1px;
+  position: relative;
+  opacity: 0;
+  animation: lines 0.5s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+}
+.left-line {
+  transform-origin: right;
+}
+.right-line {
+  transform-origin: left;
+}
+.left-line::before,
+.right-line::before {
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+  border-left: 5px solid white;
+  left: -2px;
+  top: -5px;
+}
+@keyframes lines {
+  0% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+.right-line::before {
+  border: 5px solid transparent;
+  border-right: 5px solid white;
+  left: unset;
+  right: -2px;
+}
+.down {
+  width: 100%;
+  height: 5.5rem;
+  overflow: hidden;
+  position: relative;
+  top: -20px;
+}
+.down div {
+  opacity: 0;
+  animation: down 0.3s;
+  animation-delay: 1.7s;
+  animation-fill-mode: forwards;
+}
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+.down p {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.down a {
+  position: relative;
+  top: 15px;
+  color: black;
+  background: #fff;
+  padding: 0.6rem 1.9rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.down a:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: #fff;
+}
+/*--------- about us section -----------*/
+section.about-us {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.our-story {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  word-spacing: 7px;
+  transform: translateY(-25px);
+  text-transform: uppercase;
+}
+section.about-us .fa-asterisk {
+  color: black;
+}
+.lorem {
+  margin-top: 2rem;
+  word-spacing: 3px;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+p.about-us {
+  color: var(--yellow);
+  text-decoration: underline;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 1.3rem 0 1.2rem 0;
+  font-weight: bolder;
+}
+.about-img img {
+  width: 100%;
+}
+.about-us-content {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.about-img {
+  opacity: 0;
+  transform: translateX(110%);
+}
+/*-------- recipes -------*/
+.recipes,
+.blend {
+  background: url("../images/tasteful-recipes.jpg") no-repeat center;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recipes h3,
+.blend h3 {
+  opacity: 0;
+  transform: translateY(-150px);
+}
+.recipes p,
+.blend p {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(145px);
+}
+/*---- menu recipes ----*/
+.recipes-menu,
+.culinary {
+  padding: 1rem 1.5rem;
+  min-height: 75vh;
+  text-align: center;
+}
+.recipes-menu .recipes-images,
+.culinary-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  opacity: 0;
+}
+.recipes-menu .recipes-images img,
+.culinary-images img {
+  width: 100%;
+}
+.recipes-content,
+.culinary-content {
+  opacity: 0;
+}
+.recipes-content h3 {
+  margin-top: 3rem;
+}
+.recipes-content #menu {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  margin: -20px 0 0 0;
+}
+.recipes-content .fa-asterisk,
+.culinary-content .fa-asterisk {
+  color: #000;
+  margin: 20px 0 0 0;
+}
+/*------ blend ---*/
+.blend {
+  background: url("../images/perfect-blend.jpg") no-repeat center;
+  background-size: cover;
+}
+.blend p {
+  color: #fff;
+}
+/*-------- culinary -------*/
+.culinary {
+  padding: 3rem 1.4rem;
+}
+.culinary h3 {
+  margin-top: 0;
+}
+.culinary-images {
+  opacity: 0;
+  overflow: hidden;
+}
+/*------ footer ---------*/
+footer {
+  position: relative;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  z-index: -1;
+  padding: 3rem 1.5rem;
+}
+.topBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+  top: -1.8rem;
+  background: black;
+  padding: 1rem 0.5rem 1rem 1.3rem;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+.topBtn a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+}
+#about-rosa {
+  text-transform: uppercase;
+  padding: 0 0 3rem 0;
+}
+.footer-content {
+  opacity: 0;
+}
+.footer-content .fa-asterisk {
+  margin-bottom: 2.2rem;
+}
+.footer-content .lorem {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.follow-us {
+  margin: 3rem 0;
+  opacity: 0;
+}
+.follow-us h4 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.follow-us .icons {
+  display: flex;
+  justify-content: space-around;
+}
+.icons i {
+  font-size: 2rem;
+}
+.newsletter {
+  opacity: 0;
+}
+.newsletter h4 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.newsletter input {
+  width: 69%;
+  height: 30px;
+  padding: 5px;
+  border: none;
+}
+.newsletter .fa {
+  background-color: #fff;
+  color: black;
+  padding: 7px;
+  margin: 0;
+  border: none;
+  transform: translate(-4px, 1.5px);
+}
+@media screen and (min-width: 700px) {
+  .body {
+    border: 1px solid black;
+  }
+}

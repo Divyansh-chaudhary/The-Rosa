@@ -1,0 +1,74 @@
+/*
+html, body { overflow-X:hidden; }
+selector {
+     opacity:0;
+}
+window.addEventListener( "scroll" , function () {
+let offset = window.pageYOffset;
+		
+if( offset > px ) {
+	$("selector").addClass("animation-class");
+}
+		---------------------------- OR --------------------------
+window.addEventListener( "scroll" , function () {
+let offset = window.pageYOffset;
+		
+if( offset > px ) {
+	document.querySelectorAll("selector")[0].className += "animation-class";
+}
+
+*/
+.topToBottom-anim {
+	animation: topToBottom .5s;
+	animation-fill-mode: forwards;
+}
+.bottomToTop-anim {
+	animation: bottomToTop .5s;
+	animation-fill-mode: forwards;
+}
+.leftToRight-anim{
+	animation: leftToRight .6s;
+	animation-fill-mode: forwards;
+}
+.rightToLeft-anim{
+	animation: rightToLeft .6s;
+	animation-fill-mode: forwards;
+}
+/*------ top to bottom ------*/
+@keyframes topToBottom {
+	0% { opacity:0;
+	        transform:translateY(-150px);
+     }
+	30%{ opacity:0.4;
+	         transform:translateY(-100px);
+      }
+	100% { opacity:1;
+	             transform:translateY(0px);
+      }
+}
+/*------- bottom to top -----*/
+@keyframes bottomToTop {
+	0% { opacity:0;
+	        transform:translateY(150px);
+     }
+	30%{ opacity:0.4;
+	         transform:translateY(100px);
+      }
+	100% { opacity:1;
+	             transform:translateY(0px);
+      }
+}
+/*----- left to right animation -----*/
+@keyframes leftToRight {
+	0%      { opacity: 0;
+	              transform: translateX(-100%); }
+	100% { opacity: 1;
+	              transform: translateX(0%); }
+}
+/*----- right to left animation -----*/
+@keyframes rightToLeft {
+	0%      { opacity: 0;
+	              transform: translateX(110%); }
+	100% { opacity: 1;
+	              transform: translateX(0%); }
+}
